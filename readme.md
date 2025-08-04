@@ -122,7 +122,8 @@ df['big_amount'] = df['last_hour_activity'].apply(lambda x: x['total_amount'] > 
 
 #### 3. Визуализация
 Построили столбчатую диаграмму для наглядного сравнения:ё
-```pythonimport matplotlib.pyplot as plt
+```python
+import matplotlib.pyplot as plt
 result.unstack().plot(kind='bar', color=['lightblue', 'orange'])
 plt.title('Риск мошенничества по активности')
 plt.ylabel('Процент мошенничества')
