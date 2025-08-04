@@ -71,5 +71,7 @@ Name: is_fraud, dtype: float64
 
 ## Использованные инструменты
 Python 3
+
 Pandas (анализ данных)
+
 Matplotlib (визуализация)
