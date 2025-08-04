@@ -20,12 +20,13 @@ df = pd.read_parquet('/content/transaction_fraud_data.parquet')
 ### 2. Основной расчет
 Сравнили процент мошенничества для двух групп транзакций:
 
-В своей стране (is_outside_home_country = False)
-За границей (is_outside_home_country = True)
+В своей стране ('is_outside_home_country = False')
+За границей ('is_outside_home_country = True')
 
 Ключевой код: 
+```python
 fraud_rates = df.groupby('is_outside_home_country')['is_fraud'].mean() * 100
-
+```
 ### 3. Визуализация
 Построили столбчатую диаграмму для наглядного сравнения:
 ```python
@@ -65,7 +66,7 @@ Name: is_fraud, dtype: float64
 Ввести SMS-подтверждение для всех зарубежных операций
 Снизить лимиты для транзакций за границей
 
-###Долгосрочные меры:
+### Долгосрочные меры:
 Разработать отдельную модель оценки риска для зарубежных платежей
 Ввести "черный список" подозрительных стран
 
@@ -75,3 +76,5 @@ Python 3
 Pandas (анализ данных)
 
 Matplotlib (визуализация)
+
+
