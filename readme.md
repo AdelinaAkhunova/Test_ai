@@ -110,16 +110,16 @@ df = pd.read_parquet('/content/transaction_fraud_data.parquet')
 2. Общую сумму\
 3. Максимальную сумму одной транзакции
 
-#### Ключевой код анализа:
+##### Ключевой код анализа:
 Создали два признака:
-df['many_transactions'] = df['last_hour_activity'].apply(lambda x: x['num_transactions'] > 10)
-df['big_amount'] = df['last_hour_activity'].apply(lambda x: x['total_amount'] > 5000)
+`df['many_transactions'] = df['last_hour_activity'].apply(lambda x: x['num_transactions'] > 10)
+df['big_amount'] = df['last_hour_activity'].apply(lambda x: x['total_amount'] > 5000)`
 
-#### Сравнили уровень мошенничества
-result = df.groupby(['many_transactions', 'big_amount'])['is_fraud'].mean() * 100
+##### Сравнили уровень мошенничества
+`result = df.groupby(['many_transactions', 'big_amount'])['is_fraud'].mean() * 100`
 
 
-### 3. Визуализация
+#### 3. Визуализация
 Построили столбчатую диаграмму для наглядного сравнения:
 import matplotlib.pyplot as plt
 result.unstack().plot(kind='bar', color=['lightblue', 'orange'])
