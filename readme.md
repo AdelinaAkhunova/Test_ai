@@ -121,16 +121,15 @@ df['big_amount'] = df['last_hour_activity'].apply(lambda x: x['total_amount'] > 
 
 
 #### 3. Визуализация
-Построили столбчатую диаграмму для наглядного сравнения:
-import matplotlib.pyplot as plt
+Построили столбчатую диаграмму для наглядного сравнения:ё
+```pythonimport matplotlib.pyplot as plt
 result.unstack().plot(kind='bar', color=['lightblue', 'orange'])
 plt.title('Риск мошенничества по активности')
 plt.ylabel('Процент мошенничества')
 plt.xlabel('Много транзакций (>10)')
 plt.legend(['Сумма ≤5000', 'Сумма >5000'])
 plt.show()
-
-
+```
 ### Выводы
 **Главный риск:** Крупные разовые платежи (>5000)\
 Уровень мошенничества: 20.6%\
