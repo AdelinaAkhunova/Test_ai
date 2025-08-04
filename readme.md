@@ -38,11 +38,11 @@ plt.show()
 
  ## Результаты: 
 
-Процент мошенничества:
-is_outside_home_country
-False     2.490202
-True     56.775294
-Name: is_fraud, dtype: float64
+Процент мошенничества:\
+is_outside_home_country\
+False     2.490202\
+True     56.775294\
+Name: is_fraud, dtype: float64\
 
 ## Дополнительно:
 Всего транзакций: 7483766
